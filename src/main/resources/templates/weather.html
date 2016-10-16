@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <title>Weather App</title>
+    </head>
+    <body>
+        <div th:if="${weatherResponse != null}">
+            <div th:inline="text">
+                This weather in [[${weatherResponse.name}]], [[${weatherResponse.sys.country}]] is: [[${weatherResponse.main.temp}]] fahrenheit.
+            </div>
+        </div>
+        <form action="" method="post">
+            City: <input type="text" placeholder="San Francisco" th:field="${location.city}" /><br/>
+            Country Code: <input type="text" placeholder="US" th:field="${location.countryCode}" /><br/>
+            <input type="submit" value="What's the weather like?" />
+        </form>
+    </body>
+</html>
